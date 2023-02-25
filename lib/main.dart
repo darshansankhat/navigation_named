@@ -5,8 +5,11 @@ import 'package:navigation/Home/Screen_1.dart';
 void main() {
   runApp(
     MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: Country_List(),
+        debugShowCheckedModeBanner: false,
+        routes: {
+          "/":(context) => Country_List(),
+          "Information":(context) => Scrren_1(),
+        }
     ),
   );
 }

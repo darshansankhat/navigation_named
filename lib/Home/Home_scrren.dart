@@ -74,15 +74,12 @@ class _Country_ListState extends State<Country_List> {
                 .asMap()
                 .entries
                 .map(
-                  (e) => GestureDetector(
+                  (e) => InkWell(
                     onTap: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              Scrren_1(l1[e.key], c1[e.key], p1[e.key],i1[e.key]),
-                        ),
-                      );
+
+                      List temp=[l1[e.key],c1[e.key],p1[e.key],i1[e.key]];
+
+                      Navigator.pushNamed(context,"Information",arguments: temp);
                     },
                     child: Information(
                       l1[e.key],

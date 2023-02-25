@@ -3,13 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 
 class Scrren_1 extends StatefulWidget {
-  String name;
-  Color c1;
-  String p1;
-  String i1;
-
-  Scrren_1(this.name, this.c1, this.p1,this.i1);
-
   @override
   State<Scrren_1> createState() => _Scrren_1State();
 }
@@ -17,10 +10,18 @@ class Scrren_1 extends StatefulWidget {
 class _Scrren_1State extends State<Scrren_1> {
   @override
   Widget build(BuildContext context) {
+
+    List temp = ModalRoute.of(context)!.settings.arguments as List;
+
+    String name=temp[0];
+    Color c1=temp[1];
+    String p1=temp[2];
+    String i1=temp[3];
+
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: widget.c1,
-        title: Text("${widget.name}"),
+        backgroundColor: c1,
+        title: Text("${name}"),
         centerTitle: true,
       ),
       body: Column(
@@ -30,9 +31,9 @@ class _Scrren_1State extends State<Scrren_1> {
             width: 500,
             decoration: BoxDecoration(
                 color: Colors.white, borderRadius: BorderRadius.circular(10)),
-            child: Image.asset("${widget.p1}"),
+            child: Image.asset("${p1}"),
           ),
-          Center(child: Text("${widget.i1}",style: TextStyle(fontSize: 30),)),
+          Center(child: Text("${i1}",style: TextStyle(fontSize: 30),)),
         ],
       ),
     );
